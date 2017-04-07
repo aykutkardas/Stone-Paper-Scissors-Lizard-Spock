@@ -59,7 +59,7 @@ function start(a) {
             
         } else {
             
-            console.log('Draw ('+enemy.name+' & '+a')');
+            console.log('Draw (' + enemy.name + ' & ' + a + ')');
             
         }
         
