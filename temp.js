@@ -44,25 +44,31 @@ function rand(min, max) {
 
 
 function start(a) {
-    
+
     if (a) {
-        
+
         enemy = set[rand(0, set.length - 1)];
-        
-        if (enemy.strong[0] === a || enemy.strong[1] === a) {
-            
-            console.log(enemy.name, 'lose', ', You ', a, ' won!');
-            
-        } else if (enemy.weak[0] === a || enemy.weak[1] === a) {
-            
-            console.log('You ', a, ' lose', enemy.name, 'Won');
+
+        if (a !== enemy.name) {
+
+            if (enemy.strong.indexOf(a) > -1) {
+
+                console.log(enemy.name, 'lose', ', You ', a, ' won!');
+
+            } else if (enemy.weak.indexOf(a) > -1) {
+
+                console.log('You ', a, ' lose', enemy.name, 'Won');
+
+            } else {
+                console.log('Bug your:' + a +'\n Enemy:' + enemy.name);
+            }
             
         } else {
-            
+
             console.log('Draw (' + enemy.name + ' & ' + a + ')');
-            
+
         }
-        
+
     }
-    
+
 }
