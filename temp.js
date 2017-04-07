@@ -7,32 +7,32 @@ var stone,
 
 stone = {
     name: 'stone',
-    strong: [spock, paper],
-    weak: [lizard, scissors]
+    strong: ['spock', 'paper'],
+    weak: ['lizard', 'scissors']
 };
 
 scissors = {
     name: 'scissors',
-    strong: [spock, stone],
-    weak: [lizard, paper]
+    strong: ['spock', 'stone'],
+    weak: ['lizard', 'paper']
 };
 
 paper = {
     name: 'paper',
-    strong: [stone, spock],
-    weak: [scissors, lizard]
+    strong: ['scissors', 'lizard'],
+    weak: ['stone', 'spock']
 };
 
 lizard = {
     name: 'lizard',
-    strong: [stone, scissors],
-    weak: [spock, paper]
+    strong: ['stone', 'scissors'],
+    weak: ['spock', 'paper']
 };
 
 spock = {
     name: 'spock',
-    strong: [lizard, paper],
-    weak: [scissors, stone]
+    strong: ['lizard', 'paper'],
+    weak: ['scissors', 'stone']
 };
 
 
@@ -44,14 +44,25 @@ function rand(min, max) {
 
 
 function start(a) {
+    
     if (a) {
+        
         enemy = set[rand(0, set.length - 1)];
-        if (enemy.strong[0].name === a || enemy.strong[1].name === a) {
+        
+        if (enemy.strong[0] === a || enemy.strong[1] === a) {
+            
             console.log(enemy.name, 'lose', ', You ', a, ' won!');
-        } else if (enemy.weak[0].name === a || enemy.weak[1].name === a) {
+            
+        } else if (enemy.weak[0] === a || enemy.weak[1] === a) {
+            
             console.log('You ', a, ' lose', enemy.name, 'Won');
+            
         } else {
+            
             console.log('bug.');
+            
         }
+        
     }
+    
 }
